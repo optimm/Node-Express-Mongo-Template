@@ -24,6 +24,10 @@ app.use("/example", ExampleRouter);
 // error handler
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
+//extra middlewares
+const helemt = require("helmet"); // for the security
+const cors = require("cors"); // for cross platform app sharing
+const xss = require("xss-clean"); // fir cleansing the data sent in the requests
 
 const start = async () => {
   try {
